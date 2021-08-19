@@ -6,15 +6,13 @@ const express = require('express');
 const app = express();
 
 /* Middleware*/
-// const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser'); <- depricated
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Cors for cross origin allowance
 const cors = require('cors');
 app.use(cors());
 
-// Initialize the main project folder
 app.use(express.static('website'));
 
 
@@ -36,11 +34,3 @@ app.post('/add', (req, res) => {
   projectData = req.body;
   res.json({Response: 'Positive'});
 });
-
-// POST feelings
-/* const data = [];
-const addFeelings = (req, res) => {
-  data.push(req.body)
-}
-
-app.post('/entry', addFeelings); */

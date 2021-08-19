@@ -58,7 +58,6 @@ const getWeather = async (url) => {
 }
 
 const updateUI = data => {
-  // console.log(data);
   dateField.innerHTML = data.date;
   locField.innerHTML = data.name + ", on the ";
   tempField.innerHTML = data.temp + "° C , ";
